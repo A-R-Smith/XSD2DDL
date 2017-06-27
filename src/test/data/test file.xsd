@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 (http://www.altova.com) by t (morningstar) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="3.5">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+                    Data WareHouse  schema for Morningstar XML data structurePlanSponsorFeeEndDate
+                    Copyright 2009 Morningstar, Inc. All rights reserved.
+    </xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="DECIMAL_19_6">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="19"/>
+			<xs:fractionDigits value="6"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DECIMAL_19_9">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="19"/>
+			<xs:fractionDigits value="9"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DECIMAL_9_2">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="9"/>
+			<xs:fractionDigits value="2"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DECIMAL_9_5">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="9"/>
+			<xs:fractionDigits value="5"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NONNEGATIVE_DECIMAL_9_5">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>			
+			<xs:totalDigits value="9"/>
+			<xs:fractionDigits value="5"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_1">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_2">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_3">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_5">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_6">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="6"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_9">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_10">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_15">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_12">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_30">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_40">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="40"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_50">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_75">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="75"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_100">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_250">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="250"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_512">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="512"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_1000">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="STRING_3000">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="3000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ID_TYPE">
+		<xs:restriction base="xs:token">
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ID_ATTR_TYPE">
+		<xs:simpleContent>
+			<xs:extension base="STRING_50">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="NAME_ATTR_TYPE">
+		<xs:simpleContent>
+			<xs:extension base="STRING_10">
+				<xs:attribute name="_Name" type="STRING_75" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_STRING_30">
+		<xs:simpleContent>
+			<xs:extension base="STRING_30">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>	
+	<xs:complexType name="TYPE_ATTR_STRING_30">
+		<xs:simpleContent>
+			<xs:extension base="STRING_75">
+				<xs:attribute name="_Id" type="ID_TYPE" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_STRING_75">
+		<xs:simpleContent>
+			<xs:extension base="STRING_75">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_STRING_250">
+		<xs:simpleContent>
+			<xs:extension base="STRING_250">
+				<xs:attribute name="_Id" type="ID_TYPE" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_STRING_3000">
+		<xs:simpleContent>
+			<xs:extension base="STRING_3000">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TYPE_ATTR_STRING_3000">
+		<xs:simpleContent>
+			<xs:extension base="STRING_3000">
+				<xs:attribute name="_Id" type="ID_TYPE" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_BOOLEAN">
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_STRING_2_ATTR_STRING_40">
+		<xs:simpleContent>
+			<xs:extension base="STRING_40">
+				<xs:attribute name="_Id" type="STRING_2" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ENDDATE_ATTR_DECIMAL_19_6">
+		<xs:simpleContent>
+			<xs:extension base="DECIMAL_19_6">
+				<xs:attribute name="EndDate" type="xs:date" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ENDDATE_ATTR_STARTDATE">
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="EndDate" type="xs:date" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="OPT_ENDDATE_ATTR_DECIMAL_19_6">
+		<xs:simpleContent>
+			<xs:extension base="DECIMAL_19_6">
+				<xs:attribute name="EndDate" type="xs:date" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="DATE_ATTR_DECIMAL_9_2">
+		<xs:simpleContent>
+			<xs:extension base="DECIMAL_9_2">
+				<xs:attribute name="Date" type="xs:date" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  <xs:complexType name="DATE_ATTR_DECIMAL_9_5">
+    <xs:simpleContent>
+      <xs:extension base="DECIMAL_9_5">
+        <xs:attribute name="Date" type="xs:date" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+	<xs:complexType name="DATE_ATTR_DECIMAL_19_6">
+		<xs:simpleContent>
+			<xs:extension base="DECIMAL_19_6">
+				<xs:attribute name="Date" type="xs:date" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ID_ATTR_INTEGER">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="_Id" type="ID_TYPE" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="ENDDATE_ATTR_STRING_75">
+		<xs:simpleContent>
+			<xs:extension base="STRING_75">
+				<xs:attribute name="EndDate" type="xs:date" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YEAR_ATTR_STRING_75">
+		<xs:simpleContent>
+			<xs:extension base="STRING_75">
+				<xs:attribute name="Year" type="xs:integer" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="YEAR_ATTR_DECIMAL_9_5">
+		<xs:simpleContent>
+			<xs:extension base="DECIMAL_9_5">
+				<xs:attribute name="Year" type="xs:integer" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TYPE_ATTR_BOOLEAN">
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean">
+				<xs:attribute name="Type" type="xs:integer" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TYPE_ATTR_STRING_75">
+		<xs:simpleContent>
+			<xs:extension base="STRING_75">
+				<xs:attribute name="Type" type="xs:integer" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="TYPE_ATTR_INTEGER">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
+				<xs:attribute name="Type" type="xs:integer" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  <xs:complexType name="TYPE_ATTR_DECIMAL_9_5">
+    <xs:simpleContent>
+      <xs:extension base="DECIMAL_9_5">
+        <xs:attribute name="Type" type="STRING_10" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+	<xs:complexType name="UNIT_ATTR_NONNEGATIVE_SMALLDECIMAL">
+		<xs:simpleContent>
+			<xs:extension base="NONNEGATIVE_DECIMAL_9_5">
+				<xs:attribute name="_Unit" type="xs:unsignedByte" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  <xs:complexType name="UNIT_ATTR_DECIMAL_19_6">
+    <xs:simpleContent>
+      <xs:extension base="DECIMAL_19_6">
+        <xs:attribute name="_Unit" type="STRING_10" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="LANGUAGEID_ATTR_STRING_512">
+		<xs:simpleContent>
+			<xs:extension base="STRING_512">
+				<xs:attribute name="LanguageId" type="STRING_10" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+  <xs:complexType name="ID_VALUE_ATTR_STRING_1000">
+    <xs:simpleContent>
+      <xs:extension base="STRING_1000">
+        <xs:attribute name="_Id" type="STRING_10" use="required"/>
+        <xs:attribute name="_Value" type="STRING_75" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ID_VALUE_ATTR_DECIMAL_9_5">
+    <xs:simpleContent>
+      <xs:extension base="DECIMAL_9_5">
+        <xs:attribute name="_Id" type="STRING_10" use="required"/>
+        <xs:attribute name="_Value" type="STRING_75" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+	<xs:complexType name="DATE_VALUE">
+		<xs:sequence>
+			<xs:element name="EndDate" type="xs:date"/>
+			<xs:element name="Value" type="DECIMAL_19_6"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FEE_SCHEDULE">
+		<xs:sequence>
+			<xs:element name="Unit" type="STRING_30" minOccurs="0"/>
+			<xs:element name="BreakpointUnit" type="STRING_10" minOccurs="0"/>
+			<xs:element name="LowBreakpoint" type="DECIMAL_19_6" minOccurs="0"/>
+			<xs:element name="HighBreakpoint" type="DECIMAL_19_6" minOccurs="0"/>
+			<xs:element name="Value" type="DECIMAL_19_6"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BENCH_MARK">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Id" type="xs:string" minOccurs="0"/>
+			<xs:element name="Weighting" type="DECIMAL_9_5" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CATEGORY_TYPE">
+    <xs:sequence>
+      <xs:element name="Id" type="STRING_10" />
+      <xs:element name="Name" type="xs:string" minOccurs ="0"/>
+      <xs:element name="StartDate" type = "xs:date" minOccurs ="0"/>
+      <xs:element name="EndDate" type = "xs:date" minOccurs ="0"/>
+    </xs:sequence>
+  </xs:complexType>
+	<xs:complexType name="CONTACT_INFO">
+		<xs:sequence>
+			<xs:element name="Name" type="STRING_50" minOccurs="0"/>
+			<xs:element name="Title" type="STRING_50" minOccurs="0"/>
+			<xs:element name="Email" type="STRING_75" minOccurs="0"/>
+			<xs:element name="Phone" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Fax" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Country" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Biography" type="STRING_3000" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="COMPANY_CONTACT_INFO">
+		<xs:sequence>
+			<xs:element name="CompanyId" type="STRING_10" minOccurs="0"/>
+			<xs:element name="Name" type="STRING_50" minOccurs="0"/>
+			<xs:element name="Title" type="STRING_50" minOccurs="0"/>
+			<xs:element name="AddressLine1" type="STRING_75" minOccurs="0"/>
+			<xs:element name="AddressLine2" type="STRING_75" minOccurs="0"/>
+			<xs:element name="AddressLine3" type="STRING_75" minOccurs="0"/>
+			<xs:element name="AddressLine4" type="STRING_75" minOccurs="0"/>
+			<xs:element name="AddressLine5" type="STRING_75" minOccurs="0"/>
+			<xs:element name="Country" type="ID_ATTR_STRING_75" minOccurs="0"/>
+			<xs:element name="Phone" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Fax" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Email" type="STRING_75" minOccurs="0"/>
+			<xs:element name="HomePage" type="STRING_75" minOccurs="0"/>
+			<xs:element name="City" type="STRING_30" minOccurs="0"/>
+			<xs:element name="Province" type="STRING_50" minOccurs="0"/>
+			<xs:element name="PostalCode" type="STRING_30" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Package">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PackageHeader">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PackageName" type="xs:string"/>
+							<xs:element name="Universe" type="xs:string"/>
+							<xs:element name="AsOfDate" type="xs:date"/>
+							<xs:element name="Version" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PackageBody">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="InvestmentVehicle" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Operation" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="InvestmentVehicleName" type="STRING_75" minOccurs="0"/>
+													<xs:element name="InceptionDate" type="xs:date" minOccurs="0"/>
+													<xs:element name="LegalType" type="TYPE_ATTR_STRING_30" minOccurs="0"/>
+													<xs:element name="OldestShareClass" type="BENCH_MARK" minOccurs="0"/>
+													<xs:element name="ShareClassType" type="ID_ATTR_TYPE" minOccurs="0"/>
+													<xs:element name="TradingExchange" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="SEDOLOfficialListingExchangeList" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Exchange" type="ID_ATTR_STRING_250" minOccurs="0"/>
+																			<xs:element name="XFMQ" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="SEDOL" type="STRING_10" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="TradingExchangeList" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Exchange" type="ID_ATTR_STRING_250" minOccurs="0"/>
+																			<xs:element name="TradingSymbol" type="STRING_10" minOccurs="0"/>
+																			<xs:element name="PrimaryExchange" type="xs:boolean" minOccurs="0"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ManagementFee" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ActualManagementFee" type="DECIMAL_9_5" minOccurs="0"/>
+																<xs:element name="ManagementFeeDeductionFrequency" type="STRING_3" minOccurs="0"/>
+																<xs:element name="MaxManagementFee" type="DECIMAL_9_5" minOccurs="0"/>
+																<xs:element name="MinimumChargeAmount" type="DECIMAL_9_2" minOccurs="0"/>
+																<xs:element name="FeeSchedule" type="FEE_SCHEDULE" minOccurs="0" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="SeparateAccountTaxEfficiencyMinimumAccountBalance" type="xs:integer" minOccurs="0"/>
+													<xs:element name="SeparateAccountTaxEfficiencyWeighting" type="DECIMAL_9_5" minOccurs="0"/>
+													<xs:element name="AnnualReportSubAdvisorFee" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TotalValue" type="DECIMAL_19_6" minOccurs="0"/>
+																<xs:element name="CompanyFeeDetail" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="CompanyId" type="STRING_10" minOccurs="0"/>
+																			<xs:element name="ContractualValue" type="DECIMAL_19_6" minOccurs="0"/>
+																			<xs:element name="ActualValue" type="DECIMAL_19_6" minOccurs="0"/>
+																			<xs:element name="FeeSchedule" type="FEE_SCHEDULE" minOccurs="0" maxOccurs="unbounded"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TurnoverRatio" type="DECIMAL_9_2" minOccurs="0"/>
+													<xs:element name="TurnoverRatioDate" type="xs:date" minOccurs="0"/>                          
+													<xs:element name="FundSERVFee" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="FundSERVFeeDetail" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="FundSERVCode" type="STRING_10" minOccurs="0"/>
+																			<xs:element name="Name" type="TYPE_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="FeeSchedule" type="FEE_SCHEDULE" minOccurs="0" maxOccurs="unbounded"/>
+																		     <xs:element name="TrailerFee">
+																			  <xs:complexType>
+																			    <xs:sequence>
+																				<xs:element name="FeeSchedule" type="FEE_SCHEDULE" minOccurs="0" maxOccurs="unbounded"/>
+																			  </xs:sequence>
+																			</xs:complexType>
+																		  </xs:element> 
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="InstitutionalInvestorETFCreationUnit" type="DECIMAL_9_2" minOccurs="0"/>
+													<xs:element name="InstitutionalInvestorETFCreationFeeMinimum" type="DECIMAL_9_2" minOccurs="0"/>
+													<xs:element name="ProspectusPrimaryBenchmark" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="BenchmarkDetail" type="BENCH_MARK" minOccurs="0" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="MorningstarPrimaryBenchmark" type="BENCH_MARK" minOccurs="0"/>
+													<xs:element name="AuditorContacts" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="AuditorContact" type="COMPANY_CONTACT_INFO" minOccurs="0" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="MorningstarSecondaryBenchmark" type="BENCH_MARK" minOccurs="0"/>
+													<xs:element name="ManagerList" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ManagerDetail" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="AssetManagementRole" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="ManagerRole" type="ID_TYPE" minOccurs="0"/>
+																			<xs:element name="ManagerId" type="ID_TYPE" minOccurs="0"/>
+																			<xs:element name="ManagerTenure" type="DECIMAL_9_2" minOccurs="0"/>
+																			<xs:element name="StartDate" type="xs:date" minOccurs="0"/>
+																			<xs:element name="OwnershipLevel" type="xs:integer" minOccurs="0"/>
+																			<xs:element name="GivenName" type="STRING_30" minOccurs="0"/>
+																			<xs:element name="MiddleName" type="STRING_30" minOccurs="0"/>
+																			<xs:element name="FamilyName" type="STRING_30" minOccurs="0"/>
+																			<xs:element name="Gender" type="STRING_1" minOccurs="0"/>
+																			<xs:element name="BirthDate" type="xs:integer" minOccurs="0"/>
+																			<xs:element name="Biographies" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ProfessionalBiography" type="ID_ATTR_STRING_3000" minOccurs="0" maxOccurs="unbounded"/>
+																						<xs:element name="SupplementaryBiography" type="TYPE_ATTR_STRING_3000" minOccurs="0" maxOccurs="unbounded"/>
+																						<xs:element name="ManagerProvidedBiography" type="TYPE_ATTR_STRING_3000" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Certifications" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="CertificationName" type="YEAR_ATTR_STRING_75" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="CareerStartDate" type="xs:integer" minOccurs="0"/>
+																			<xs:element name="CollegeEducations" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="CollegeEducation" minOccurs="0" maxOccurs="unbounded">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="School" type="STRING_75" minOccurs="0"/>
+																									<xs:element name="Year" type="STRING_75" minOccurs="0"/>
+																									<xs:element name="Degree" type="STRING_75" minOccurs="0"/>
+																									<xs:element name="DegreeLevel" type="STRING_75" minOccurs="0"/>
+																									<xs:element name="Major" type="STRING_75" minOccurs="0"/>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Specialties" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="Specialty" type="ID_ATTR_STRING_75" minOccurs="1" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="CompanyRegistrations" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="RegistrationCompany" type="ID_ATTR_STRING_75" minOccurs="0" maxOccurs="unbounded"/>
+																<xs:element name="RegistrationCompanyDetail" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="RegistrationCountry" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="RegistrationCompanyInformation" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="RegistrationCompanyAddressLine1" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyAddressLine2" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyAddressLine3" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyAddressLine4" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyAddressLine5" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyCountry" type="STRING_30" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyPhone" type="STRING_30" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyFax" type="STRING_30" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyEmailAddress" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyHomepage" type="STRING_75" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyCity" type="STRING_30" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyProvince" type="STRING_30" minOccurs="0"/>
+																						<xs:element name="RegistrationCompanyPostalCode" type="STRING_30" minOccurs="0"/>
+																					</xs:sequence>
+																					<xs:attribute name="PrimaryHeadquarter" type="xs:boolean"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="RestrictedTradingPeriod" type="xs:integer" minOccurs="0"/>
+													<xs:element name="RestrictedTradingPeriodUnit" type="STRING_50" minOccurs="0"/>
+													<xs:element name="CountryOfSales" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="SalesArea" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Country" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="SalesAreaLocalName" type="STRING_75" minOccurs="0"/>
+																			<xs:element name="InstitutionalOnly" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="RetailOnly" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="RetirementInvestment" type="STRING_10" minOccurs="0"/>
+																			<xs:element name="TaxSavingInvestment" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="QualifiedInvestment" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="InvestorClassification" type="STRING_1" minOccurs="0"/>
+																			<xs:element name="ClosedToNewInvestors" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="ClosedToNewInvestorsDate" type="xs:date" minOccurs="0"/>
+																						<xs:element name="InstitutionalIndicator" type="xs:boolean" minOccurs="0"/>
+																						<xs:element name="RetailIndicator" type="xs:boolean" minOccurs="0"/>
+																						<xs:element name="DirectIndicator" type="xs:boolean" minOccurs="0"/>
+																						<xs:element name="AdviceIndicator" type="xs:boolean" minOccurs="0"/>
+																						<xs:element name="RetirementPlanIndicator" type="xs:boolean" minOccurs="0"/>
+																						<xs:element name="SupermarketIndicator" type="xs:boolean" minOccurs="0"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="ClosedToAllInvestors" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="ClosedToAllInvestorsDate" type="xs:date" minOccurs="0"/>
+																			<xs:element name="ReopenDate" type="xs:date" minOccurs="0"/>
+																			<xs:element name="ConditionalDeferLoadNote" type="STRING_3000" minOccurs="0"/>
+																			<xs:element name="InitialLockupPeriod" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="MaximumFrequency" type="xs:string" minOccurs="0"/>
+																			<xs:element name="AdvancedNoticeTime" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="SecurityInKind" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="InitialPayoutPayoutRate" type="xs:decimal" minOccurs="0"/>
+																			<xs:element name="InitialPayoutMaximumPayoutPeriod" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="FinalPayoutPayoutRate" type="xs:decimal" minOccurs="0"/>
+																			<xs:element name="FinalPayoutMaximumPayoutPeriod" type="ID_ATTR_STRING_75" minOccurs="0"/>
+																			<xs:element name="FinalPayoutAfterAudit" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="BrokerCompanies" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="BrokerCompany" type="ID_ATTR_STRING_75" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="AutomaticInvestmentPlan" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="SystematicWithdrawalPlan" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="DividendInvestmentPlan" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="CashInvestmentPlan" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="PhoneExchange" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="WireRedemption" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="SweepOption" type="xs:boolean" minOccurs="0"/>
+																			<xs:element name="FundClassConversionYear" type="xs:integer" minOccurs="0"/>
+																			<xs:element name="FundClassConversionToId" type="ID_TYPE" minOccurs="0"/>
+																			<xs:element name="LocalPhone" type="STRING_30" minOccurs="0"/>
+																			<xs:element name="TollFreePhone" type="STRING_30" minOccurs="0"/>
+																			<xs:element name="InvestorReportFrequency" type="STRING_3" minOccurs="0"/>
+																			<xs:element name="SalesAreaNames" minOccurs="0">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="AreaName" type="ID_ATTR_STRING_75" minOccurs="0" maxOccurs="unbounded"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DealingSchedule" minOccurs="0">
+													<xs:complexType>
+													  <xs:sequence>
+														<xs:element name="ValuationTime" minOccurs="0">
+														  <xs:complexType>
+															<xs:simpleContent>
+															  <xs:extension base="STRING_10">
+																<xs:attribute name="_CountryId" type="STRING_10" use="required"/>
+																<xs:attribute name="TimeZone" type="STRING_10"/>
+															  </xs:extension>
+															</xs:simpleContent>
+														  </xs:complexType>
+														</xs:element>								 
+														<xs:element name="DealingTime" minOccurs="0">
+														  <xs:complexType>
+															<xs:sequence>
+															  <xs:element name="DealingTimeDetail" minOccurs="0" maxOccurs="unbounded">
+																<xs:complexType>
+																  <xs:sequence minOccurs="0">
+																	<xs:element name="StartTime" type="STRING_10"/>
+																	<xs:element name="EndTime" type="STRING_10"/>
+																  </xs:sequence>
+																  <xs:attribute name="_CountryId" type="STRING_10" use="required"/>
+																  <xs:attribute name="TimeZone" type="STRING_10"/>
+																</xs:complexType>
+															  </xs:element>
+															  <xs:element name="CutOffTimeDetail" minOccurs="0"  maxOccurs="unbounded">
+																<xs:complexType>
+																  <xs:sequence>
+																	<xs:element name="CutOffTime" type="STRING_10" minOccurs="0"/>
+																	<xs:element name="DealingType" type="STRING_10" minOccurs="0"/>
+																  </xs:sequence>
+																  <xs:attribute name="_CountryId" type="STRING_10" use="required"/>
+																  <xs:attribute name="TimeZone" type="STRING_10"/>
+																</xs:complexType>
+															  </xs:element>
+															</xs:sequence>
+														  </xs:complexType>
+														</xs:element>
+													  </xs:sequence>
+													</xs:complexType>
+												  </xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="TrailingPerformance" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="MonthEndTrailingPerformance" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="PerformanceCurrency" type="ID_ATTR_TYPE" minOccurs="0"/>
+																<xs:element name="PerformanceAsOfDate" type="xs:date" minOccurs="0"/>
+																<xs:element name = "TrailingTaxAdjustedReturn" minOccurs="0">
+																  <xs:complexType>
+																	<xs:sequence maxOccurs="unbounded">
+																	  <xs:element name="TrailingTaxAdjustedReturnYTD" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnM1" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnM3" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnM6" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY1" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY3" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY5" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY10" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY15" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnY20" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	  <xs:element name="TrailingTaxAdjustedReturnSinceInception" type="TYPE_ATTR_DECIMAL_9_5" minOccurs="0" maxOccurs="unbounded"/>
+																	</xs:sequence>
+																  </xs:complexType>
+																</xs:element>
+																<xs:element name="TrailingReturnY15PureAbsoluteRank" type="xs:integer" minOccurs="0"/>
+																<xs:element name="TrailingReturnY20PureAbsoluteRank" type="xs:integer" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="QuarterEndTrailingPerformance" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="QuarterEndPerformanceAsOfDate" type="xs:date" minOccurs="0"/>
+																<xs:element name="QuarterEndMarketPerformanceAsOfDate" type="xs:date" minOccurs="0"/>
+																
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="HistoricalPerformance" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="HistPerfIsEPRY0" type="xs:boolean" minOccurs="0"/>
+													<xs:element name="HistPerfIsEPRY1" type="xs:boolean" minOccurs="0"/>
+													<xs:element name="GrowthOf10KNAV" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="HistoryDetail" type="DATE_VALUE" minOccurs="0" maxOccurs="unbounded"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="_Id" type="ID_TYPE"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
